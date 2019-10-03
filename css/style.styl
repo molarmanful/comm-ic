@@ -1,0 +1,22 @@
+// vertical linear layout
+// pulsating comic button
+
+html, body
+  height 100%
+  width 100%
+  margin 0
+  font-family sans-serif
+
+.full
+  height 100%
+  width 100%
+  display flex
+  justify-content center
+  align-items center
+  flex-direction column
+  .full
+    cursor pointer
+    transition all 1s
+
+.scaled
+  transform scale(.5) !important
