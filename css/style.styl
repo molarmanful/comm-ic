@@ -1,11 +1,56 @@
-// vertical linear layout
-// pulsating comic button
+/* Compiled from style.styl */
+
+/* TAGS */
 
 html, body
   height 100%
   width 100%
   margin 0
   font-family sans-serif
+  transition 1s all
+
+
+/* CLASSES */
+
+.faded
+  opacity 0
+  transition none
+
+.top, .left, .bottom, .right
+  position fixed
+  z-index 1
+  background-color #fff
+.top, .bottom
+  width 100%
+  height 10%
+  left 0
+.left, .right
+  width 10%
+  height 80%
+  top 10%
+.top
+  top 0
+.left
+  left 0
+.right
+  right 0
+.bottom
+  bottom 0
+
+.bg
+  height calc(80% - 10px)
+  width calc(80% - 10px)
+  top 10%
+  left 10%
+  position fixed
+  background-image url(../media/back.png)
+  background-size cover
+  background-position center
+  border 5px solid #000
+
+.cont
+  height 100%
+  width 100%
 
 .full
   height 100%
@@ -13,10 +58,29 @@ html, body
   display flex
   justify-content center
   align-items center
-  flex-direction column
-  .full
-    cursor pointer
+
+  .panel
+    height 80%
+    width 80%
+    display flex
+    justify-content center
+    align-items center
+    .brains
+      height 100%
+      width 100%
+      background-repeat no-repeat
+      background-size contain
+      background-position center bottom
+  .sub
+    height 100%
+    width 100%
+    display flex
+    justify-content center
+    align-items center
     transition all 1s
 
 .scaled
   transform scale(.5) !important
+  cursor pointer
+
+/* IDS */

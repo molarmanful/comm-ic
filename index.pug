@@ -1,3 +1,9 @@
+// A COMM-IC
+// by Benjamin Pang & Jana Počuchová
+// Distributable under MIT License
+
+// Compiled from index.pug
+
 doctype html
 html
   head
@@ -7,19 +13,37 @@ html
     link(href='./css/style.css' rel='stylesheet')
 
   body
-    mixin page(color)
-      .full(style='background-color: ' + color)
-        block
-    mixin sub(color)
-      .full.scaled(style='background-color: ' + color)
-        block
+    script.
+      document.body.className += ' faded'
 
-    +page('#f47c7c'): h1 1
-    +page('#f7f48b'): h1 2
-    +page('#a1de93'): h1 3
-    +page('#70a1d7')
-      +sub('#f47c7c')
-        h1 1
+    // Fixed frame
+    .top
+    .bottom
+    .left
+    .right
+
+    // House background
+    .bg
+
+    // Foreground w/ brains, dialogue, etc.
+    .cont
+      mixin page(n)
+        .full: .panel
+          .brains(style='background-image: url(./media/brains/brains' + n + '.png)')
+          block
+      mixin sub
+        .sub.scaled
+          block
+
+      +page(1)
+      +page(2)
+      +page(3)
+      +page(4)
+      +page(5)
+      +page(6)
+        +sub
+          h1 asdf
 
     script(src='./js/jquery.min.js')
+    script(src='./js/fullpage.min.js')
     script(src='./js/main.js')

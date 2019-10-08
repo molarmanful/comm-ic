@@ -1,0 +1,2 @@
+au BufWritePost *.styl !stylus -u autoprefixer-stylus %
+au BufWritePost *.pug !pug -P %

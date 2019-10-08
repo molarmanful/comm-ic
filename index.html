@@ -1,1 +1,64 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Comic</title><link href="./css/style.css" rel="stylesheet"></head><body><div class="full" style="background-color: #f47c7c"><h1>1</h1></div><div class="full" style="background-color: #f7f48b"><h1>2</h1></div><div class="full" style="background-color: #a1de93"><h1>3</h1></div><div class="full" style="background-color: #70a1d7"><div class="full scaled" style="background-color: #f47c7c"><h1>1</h1></div></div><script src="./js/jquery.min.js"></script><script src="./js/main.js"></script></body></html>
+
+<!-- A COMM-IC-->
+<!-- by Benjamin Pang & Jana Počuchová-->
+<!-- Distributable under MIT License-->
+<!-- Compiled from index.pug--><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Comic</title>
+    <link href="./css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <script>
+      document.body.className += ' faded'
+      
+    </script>
+    <!-- Fixed frame-->
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <!-- House background-->
+    <div class="bg"></div>
+    <!-- Foreground w/ brains, dialogue, etc.-->
+    <div class="cont">
+            <div class="full">
+              <div class="panel">
+                <div class="brains" style="background-image: url(./media/brains/brains1.png)"></div>
+              </div>
+            </div>
+            <div class="full">
+              <div class="panel">
+                <div class="brains" style="background-image: url(./media/brains/brains2.png)"></div>
+              </div>
+            </div>
+            <div class="full">
+              <div class="panel">
+                <div class="brains" style="background-image: url(./media/brains/brains3.png)"></div>
+              </div>
+            </div>
+            <div class="full">
+              <div class="panel">
+                <div class="brains" style="background-image: url(./media/brains/brains4.png)"></div>
+              </div>
+            </div>
+            <div class="full">
+              <div class="panel">
+                <div class="brains" style="background-image: url(./media/brains/brains5.png)"></div>
+              </div>
+            </div>
+            <div class="full">
+              <div class="panel">
+                <div class="brains" style="background-image: url(./media/brains/brains6.png)"></div>
+                      <div class="sub scaled">
+                        <h1>asdf</h1>
+                      </div>
+              </div>
+            </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/fullpage.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
