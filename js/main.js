@@ -18,6 +18,17 @@ let f_init = _=>{
 let chars = ['brains', 'fluff', 'floof', 'paint', 'spikes']
 let cur = 'brains'
 
+// preload images
+let preload = _=>{
+  chars.map(a=>{
+    [...new Array(6)].map((_,b)=>{
+      $('<img>')[0].src = `./media/${a}/${a + ++b}.png`
+    })
+  })
+}
+
+preload()
+
 // change to random character
 let change_c = (x=chars.filter(a=> a != cur)[Math.random() * (chars.length - 1) | 0])=>{
   $('.chars, .ch').each((_,a)=>{
@@ -71,7 +82,7 @@ let handler = _=>{
   }, 1000)
 }
 
-$(_=>{
+$(window).on('load', _=>{
   f_init()
 
   // fade in everything
