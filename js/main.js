@@ -1,3 +1,5 @@
+
+
 // initialize fullpage.js
 let f_init = _=>{
   $('.cont').fullpage({
@@ -9,7 +11,7 @@ let f_init = _=>{
       $('.sub').addClass('fadedd')
       n_up(b.index)
       setTimeout(_=>{
-        $('.sub').removeClass('fadedd')
+        $('.panel').eq(b.index).children('.sub').removeClass('fadedd')
       }, 500)
     }
   })
@@ -21,36 +23,52 @@ let n_up = n=>{
   $('.nav').eq(n).text('■')
 }
 
-// handles recursive action in last panel
-// turns off fullpage.js temporarily to allow DOM changes
+// handles recursive actions in last panel
 let handler = _=>{
-  let panes = $('.cont > .full')
-  let hand = $('.scaled')
-  let cpane = $('.scaled').parents('.full').clone()
+  let panes = $('.full')
+  let last = panes.last()
+  let hand = $('.inf')
+  let bg = $('.bg')
+  let sub = $('.sub')
 
-  $.fn.fullpage.destroy('all')
+  last.addClass('zoomed')
+  panes.addClass('fadedt')
+  bg.addClass('zoomed fadedt')
 
-  panes.first().remove()
-  hand.first().removeClass('scaled').off('click')
-  cpane.removeClass('active')
-  hand.addClass('active')
-  $('.cont').append(panes.slice(1, -1), cpane)
+  setTimeout(_=>{
+    $.fn.fullpage.silentMoveTo(1)
+
+    last.removeClass('zoomed')
+    bg.removeClass('zoomed')
+    sub.addClass('faded')
+
+    setTimeout(_=>{
+
+      panes.removeClass('fadedt')
+      bg.removeClass('fadedt')
+
+      setTimeout(_=>{
+        sub.removeClass('faded')
+      }, 500)
+    }, 1100)
+  }, 1000)
+
   n_up(0)
 
-  f_init()
-  $('.scaled').click(handler)
 }
 
 $(_=>{
   f_init()
 
+  // fade in everything
   n_up(0)
   $('.sub').addClass('faded')
   $('body').removeClass('faded')
   setTimeout(_=>{
     $('.sub').removeClass('faded')
   }, 500)
-  $('.scaled').click(handler)
+
+  $('.inf').click(handler)
 
   $('.nav').click(e=>{
     let ind = $(e.target).index()

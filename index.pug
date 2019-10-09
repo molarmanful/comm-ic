@@ -17,6 +17,8 @@ html
       document.body.className += ' faded'
 
     // Fixed frame
+    .left2
+    .right2
     .left
     .right
       each x in Array(6)
@@ -36,8 +38,8 @@ html
         .full: .panel
           .brains(style='background-image: url(./media/brains/brains' + n + '.png)')
           block
-      mixin sub(x)
-        .sub(style='background-image: url(./media/brains/' + x + '.png)')
+      mixin sub(x, c='')
+        .sub(class=c style='background-image: url(./media/brains/' + x + '.png)')
           block
 
       +panel(1)
@@ -48,8 +50,10 @@ html
         +sub('brains4Bubble1')
         +sub('brains4Bubble2')
       +panel(5)
+        .sub: img.glow(src='./media/brains/brains5Bulb.png')
       +panel(6)
-        +sub('brains6Bubble1')
+        .sub.inf
+          img.rec(src='./media/brains/brains6Bubble1.png')
 
     script(src='./js/jquery.min.js')
     script(src='./js/fullpage.min.js')

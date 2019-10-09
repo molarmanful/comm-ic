@@ -20,12 +20,25 @@ body {
   -webkit-transition: 0.1s all !important;
   transition: 0.1s all !important;
 }
+.fadedt {
+  opacity: 0;
+}
+.zoomed {
+  -webkit-transform: scale(30);
+          transform: scale(30);
+  -webkit-transform-origin: 50% 20%;
+          transform-origin: 50% 20%;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
 .top,
 .left,
 .bottom,
-.right {
+.right,
+.left2,
+.right2 {
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,6 +56,12 @@ body {
   height: 80%;
   top: 10%;
 }
+.left2,
+.right2 {
+  width: 10%;
+  height: 100%;
+  top: 0;
+}
 .top {
   top: 0;
   border-bottom: 5px solid #000;
@@ -59,6 +78,9 @@ body {
 .left {
   left: 0;
   border-right: 5px solid #000;
+}
+.left2 {
+  left: 0;
 }
 .right {
   right: 0;
@@ -78,6 +100,9 @@ body {
           flex-direction: column;
   font-size: 2em;
 }
+.right2 {
+  right: 0;
+}
 .bottom {
   bottom: 0;
   border-top: 5px solid #000;
@@ -91,9 +116,11 @@ body {
   top: 10%;
   left: 10%;
   position: fixed;
-  background-image: url("../media/background.png");
+  background-image: url("../media/brains/background.png");
   background-size: cover;
   background-position: center;
+  -webkit-transition: 1s all;
+  transition: 1s all;
 }
 .cont {
   height: 100%;
@@ -111,6 +138,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 1s all;
+  transition: 1s all;
 }
 .full .panel {
   height: 80%;
@@ -154,9 +183,24 @@ body {
   -webkit-transition: all 1s;
   transition: all 1s;
 }
-.scaled {
-  -webkit-transform: scale(0.5) !important;
-          transform: scale(0.5) !important;
+.full .sub .rec,
+.full .sub .glow {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.full .sub .glow:hover {
+  -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+          filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+}
+.full .sub .rec:hover {
+  -webkit-filter: drop-shadow(5px 5px 5px #fff) drop-shadow(-5px -5px 5px #fff);
+          filter: drop-shadow(5px 5px 5px #fff) drop-shadow(-5px -5px 5px #fff);
+}
+.full .inf {
   cursor: pointer;
 }
 /* IDS */
