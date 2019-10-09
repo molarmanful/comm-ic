@@ -127,10 +127,22 @@ html, body
       width auto
       transition all 1s
     .glow:hover
-      filter drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0)
+      animation-name glow
+      animation-duration 1s
+      animation-iteration-count infinite
     .rec:hover
       filter drop-shadow(5px 5px 5px #fff) drop-shadow(-5px -5px 5px #fff)
   .inf
     cursor pointer
 
 /* IDS */
+
+/* KEYFRAMES/MEDIA */
+
+@keyframes glow
+  0%
+    filter drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0)
+  50%
+    filter drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0)
+  100%
+    filter drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0)

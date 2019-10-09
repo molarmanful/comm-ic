@@ -193,8 +193,12 @@ body {
   transition: all 1s;
 }
 .full .sub .glow:hover {
-  -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
-          filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+  -webkit-animation-name: glow;
+          animation-name: glow;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 .full .sub .rec:hover {
   -webkit-filter: drop-shadow(5px 5px 5px #fff) drop-shadow(-5px -5px 5px #fff);
@@ -204,3 +208,32 @@ body {
   cursor: pointer;
 }
 /* IDS */
+/* KEYFRAMES/MEDIA */
+@-webkit-keyframes glow {
+  0% {
+    -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+            filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+  }
+  50% {
+    -webkit-filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
+            filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
+  }
+  100% {
+    -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+            filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+  }
+}
+@keyframes glow {
+  0% {
+    -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+            filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+  }
+  50% {
+    -webkit-filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
+            filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
+  }
+  100% {
+    -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+            filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+  }
+}
