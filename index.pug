@@ -8,7 +8,7 @@ doctype html
 html
   head
     meta(charset='utf-8')
-    title Comic
+    title IDEA
 
     link(href='./css/style.css' rel='stylesheet')
 
@@ -27,6 +27,7 @@ html
       h1.x IDEA
       h3.x.r by Ben Pang & Jana Počuchová
     .bottom
+      p.fadedd HINT: Click the panel to see their idea!
 
 
     // House background
@@ -36,7 +37,7 @@ html
     .cont
       mixin panel(n)
         .full: .panel
-          .brains(style='background-image: url(./media/brains/brains' + n + '.png)')
+          .chars(style='background-image: url(./media/brains/brains' + n + '.png)')
           block
       mixin sub(x, c='')
         .sub(class=c style='background-image: url(./media/brains/' + x + '.png)')
@@ -45,6 +46,7 @@ html
       +panel(1)
         +sub('brains1Bubble1')
       +panel(2)
+        +sub('brains2Thinking', 'think')
       +panel(3)
       +panel(4)
         +sub('brains4Bubble1')
@@ -52,8 +54,7 @@ html
       +panel(5)
         .sub: img.glow(src='./media/brains/brains5Bulb.png')
       +panel(6)
-        .sub.inf
-          img.rec(src='./media/brains/brains6Bubble1.png')
+        +sub('brains6Bubble1', 'inf')
 
     script(src='./js/jquery.min.js')
     script(src='./js/fullpage.min.js')

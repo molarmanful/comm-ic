@@ -1,5 +1,3 @@
-
-
 // initialize fullpage.js
 let f_init = _=>{
   $('.cont').fullpage({
@@ -17,10 +15,26 @@ let f_init = _=>{
   })
 }
 
+let chars = ['brains', 'fluff', 'floof', 'paint', 'spikes']
+let cur = 'brains'
+
+// change to random character
+let change_c = (x=chars.filter(a=> a != cur)[Math.random() * (chars.length - 1) | 0])=>{
+  $('.chars, .ch').each((_,a)=>{
+    $(a).css('background-image', $(a).css('background-image').replace(RegExp(cur, 'g'), x))
+  })
+  cur = x
+}
+
 // change active square in nav
 let n_up = n=>{
   $('.nav').text('□')
   $('.nav').eq(n).text('■')
+  if(n == 5){
+    $('.bottom p').removeClass('fadedd')
+  } else {
+    $('.bottom p').addClass('fadedd')
+  }
 }
 
 // handles recursive actions in last panel
@@ -35,6 +49,8 @@ let handler = _=>{
   panes.addClass('fadedt')
   bg.addClass('zoomed fadedt')
 
+  n_up(0)
+
   setTimeout(_=>{
     $.fn.fullpage.silentMoveTo(1)
 
@@ -43,6 +59,7 @@ let handler = _=>{
     sub.addClass('faded')
 
     setTimeout(_=>{
+      change_c()
 
       panes.removeClass('fadedt')
       bg.removeClass('fadedt')
@@ -52,9 +69,6 @@ let handler = _=>{
       }, 500)
     }, 1100)
   }, 1000)
-
-  n_up(0)
-
 }
 
 $(_=>{

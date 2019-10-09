@@ -24,8 +24,8 @@ body {
   opacity: 0;
 }
 .zoomed {
-  -webkit-transform: scale(30);
-          transform: scale(30);
+  -webkit-transform: scale(20);
+          transform: scale(20);
   -webkit-transform-origin: 50% 20%;
           transform-origin: 50% 20%;
   -webkit-transition: 1s all;
@@ -106,6 +106,17 @@ body {
 .bottom {
   bottom: 0;
   border-top: 5px solid #000;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-style: italic;
+}
+.bottom p {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 .nav {
   cursor: pointer;
@@ -155,7 +166,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.full .panel .brains {
+.full .panel .chars {
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
@@ -183,7 +194,6 @@ body {
   -webkit-transition: all 1s;
   transition: all 1s;
 }
-.full .sub .rec,
 .full .sub .glow {
   max-height: 100%;
   max-width: 100%;
@@ -200,40 +210,73 @@ body {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-.full .sub .rec:hover {
-  -webkit-filter: drop-shadow(5px 5px 5px #fff) drop-shadow(-5px -5px 5px #fff);
-          filter: drop-shadow(5px 5px 5px #fff) drop-shadow(-5px -5px 5px #fff);
+.full .think:hover {
+  -webkit-animation-name: think;
+          animation-name: think;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 .full .inf {
   cursor: pointer;
+  will-change: transform;
 }
 /* IDS */
-/* KEYFRAMES/MEDIA */
+/* KEYFRAMES */
 @-webkit-keyframes glow {
   0% {
-    -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
-            filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
-  }
-  50% {
     -webkit-filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
             filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
   }
-  100% {
+  50% {
     -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
             filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+  }
+  100% {
+    -webkit-filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
+            filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
   }
 }
 @keyframes glow {
   0% {
-    -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
-            filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
-  }
-  50% {
     -webkit-filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
             filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
   }
-  100% {
+  50% {
     -webkit-filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
             filter: drop-shadow(5px 5px 5px #ff0) drop-shadow(-5px -5px 5px #ff0) drop-shadow(5px -5px 5px #ff0) drop-shadow(-5px 5px 5px #ff0);
+  }
+  100% {
+    -webkit-filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
+            filter: drop-shadow(1px 1px 5px #ff0) drop-shadow(-1px -1px 5px #ff0) drop-shadow(1px -1px 5px #ff0) drop-shadow(-1px 1px 5px #ff0);
+  }
+}
+@-webkit-keyframes think {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes think {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
