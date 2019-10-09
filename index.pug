@@ -32,22 +32,24 @@ html
 
     // Foreground w/ brains, dialogue, etc.
     .cont
-      mixin page(n)
+      mixin panel(n)
         .full: .panel
           .brains(style='background-image: url(./media/brains/brains' + n + '.png)')
           block
-      mixin sub
-        .sub.scaled
+      mixin sub(x)
+        .sub(style='background-image: url(./media/brains/' + x + '.png)')
           block
 
-      +page(1)
-      +page(2)
-      +page(3)
-      +page(4)
-      +page(5)
-      +page(6)
-        +sub
-          h1 asdf
+      +panel(1)
+        +sub('brains1Bubble1')
+      +panel(2)
+      +panel(3)
+      +panel(4)
+        +sub('brains4Bubble1')
+        +sub('brains4Bubble2')
+      +panel(5)
+      +panel(6)
+        +sub('brains6Bubble1')
 
     script(src='./js/jquery.min.js')
     script(src='./js/fullpage.min.js')

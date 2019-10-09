@@ -12,8 +12,13 @@ body {
 /* CLASSES */
 .faded {
   opacity: 0;
-  -webkit-transition: none;
-  transition: none;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+.fadedd {
+  opacity: 0;
+  -webkit-transition: 0.1s all !important;
+  transition: 0.1s all !important;
 }
 .top,
 .left,
@@ -86,7 +91,7 @@ body {
   top: 10%;
   left: 10%;
   position: fixed;
-  background-image: url("../media/back.png");
+  background-image: url("../media/background.png");
   background-size: cover;
   background-position: center;
 }
@@ -110,6 +115,7 @@ body {
 .full .panel {
   height: 80%;
   width: 80%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,6 +136,9 @@ body {
 .full .sub {
   height: 100%;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,6 +148,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
   -webkit-transition: all 1s;
   transition: all 1s;
 }

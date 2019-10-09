@@ -14,7 +14,10 @@ html, body
 
 .faded
   opacity 0
-  transition none
+  transition none !important
+.fadedd
+  opacity 0
+  transition .1s all !important
 
 .top, .left, .bottom, .right
   position fixed
@@ -61,7 +64,7 @@ html, body
   top 10%
   left 10%
   position fixed
-  background-image url(../media/back.png)
+  background-image url(../media/background.png)
   background-size cover
   background-position center
 
@@ -79,6 +82,7 @@ html, body
   .panel
     height 80%
     width 80%
+    position relative
     display flex
     justify-content center
     align-items center
@@ -91,9 +95,15 @@ html, body
   .sub
     height 100%
     width 100%
+    position absolute
+    top 0
+    left 0
     display flex
     justify-content center
     align-items center
+    background-repeat no-repeat
+    background-size contain
+    background-position center bottom
     transition all 1s
 
 .scaled

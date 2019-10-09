@@ -6,7 +6,11 @@ let f_init = _=>{
     verticalCentered: false,
     scrollingSpeed: 1000,
     onLeave: (a,b)=>{
+      $('.sub').addClass('fadedd')
       n_up(b.index)
+      setTimeout(_=>{
+        $('.sub').removeClass('fadedd')
+      }, 500)
     }
   })
 }
@@ -39,9 +43,15 @@ let handler = _=>{
 
 $(_=>{
   f_init()
+
   n_up(0)
+  $('.sub').addClass('faded')
   $('body').removeClass('faded')
+  setTimeout(_=>{
+    $('.sub').removeClass('faded')
+  }, 500)
   $('.scaled').click(handler)
+
   $('.nav').click(e=>{
     let ind = $(e.target).index()
     n_up(ind)
