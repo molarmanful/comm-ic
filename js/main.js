@@ -15,7 +15,7 @@ let f_init = _=>{
   })
 }
 
-let chars = ['brains', 'fluff', 'floof', 'paint', 'spikes']
+let chars = ['brains', 'brush', 'fluff', 'floof', 'paint', 'q', 'spikes', 'sponge', 'water']
 let cur = 'brains'
 
 // preload images
